@@ -5,7 +5,7 @@ class Task {
     this.title = title;
     this.description = description;
     this.dueDate = dueDate;
-    this.priority = priority || false;
+    this.priority = priority ?? false;
     this.completion = false;
   }
 
@@ -18,10 +18,10 @@ class Task {
   }
 
   updateTask(newTitle, newDescription, newDuedate, newPriority) {
-    this.title = newTitle || this.title;
-    this.description = newDescription || this.description;
-    this.dueDate = newDuedate || this.dueDate;
-    this.priority = newPriority || this.priority;
+    this.title = newTitle ?? this.title;
+    this.description = newDescription ?? this.description;
+    this.dueDate = newDuedate ?? this.dueDate;
+    this.priority = newPriority ?? this.priority;
   }
 }
 
