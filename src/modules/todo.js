@@ -55,7 +55,7 @@ function findTask(projectName, taskTitle) {
 }
 
 function markTaskAsComplete(projectName, taskTitle) {
-  taskObj = findTask(projectName, taskTitle);
+  const taskObj = findTask(projectName, taskTitle);
   if (taskObj) {
     taskObj.markAsComplete();
     console.log(`✅ Task "${taskTitle}" marked as complete!`);
@@ -65,7 +65,7 @@ function markTaskAsComplete(projectName, taskTitle) {
 }
 
 function toggleTaskPriority(projectName, taskTitle) {
-  taskObj = findTask(projectName, taskTitle); 
+  const taskObj = findTask(projectName, taskTitle); 
   if (taskObj) {
     taskObj.togglePriority();
     console.log(`✅ Task "${taskTitle}" priority changed!`);
@@ -91,7 +91,7 @@ function deleteTodo(projectName, taskTitle) {
 }
 
 function editTask(projectName, taskTitle, newTitle, newDescription, newDuedate, newPriority) {
-  taskObj = findTask(projectName, taskTitle);  
+  const taskObj = findTask(projectName, taskTitle);  
   if (taskObj) {
     taskObj.updateTask(newTitle, newDescription, newDuedate, newPriority);
     console.log(`✅ Task "${taskTitle}" edit succesful!`);
