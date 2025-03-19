@@ -60,7 +60,7 @@ function markTaskAsComplete(projectName, taskTitle) {
     taskObj.markAsComplete();
     console.log(`✅ Task "${taskTitle}" marked as complete!`);
   } else {
-    console.log(`⛔ Task "${taskTitle}" not found!`);
+    console.error(`⛔ Task "${taskTitle}" not found!`);
   }
 }
 
@@ -70,13 +70,13 @@ function toggleTaskPriority(projectName, taskTitle) {
     taskObj.togglePriority();
     console.log(`✅ Task "${taskTitle}" priority changed!`);
   } else {
-    console.log(`⛔ Task "${taskTitle}" couldn't change priority!`);
+    console.error(`⛔ Task "${taskTitle}" couldn't change priority!`);
   }
 }
 
 function deleteTodo(projectName, taskTitle) {
    if (!projects[projectName]) {
-    console.log(`⛔ Project "${projectName}" not found.`);
+    console.error(`⛔ Project "${projectName}" not found.`);
     return;
   }
 
@@ -86,7 +86,7 @@ function deleteTodo(projectName, taskTitle) {
     projects[projectName].splice(taskIndex, 1); // Remove the task from the array
     console.log(`✅ Task "${taskTitle}" deleted!`);
   } else {
-    console.log(`⛔ Task "${taskTitle}" not found in project "${projectName}".`);
+    console.error(`⛔ Task "${taskTitle}" not found in project "${projectName}".`);
   } 
 }
 
@@ -96,7 +96,7 @@ function editTask(projectName, taskTitle, newTitle, newDescription, newDuedate, 
     taskObj.updateTask(newTitle, newDescription, newDuedate, newPriority);
     console.log(`✅ Task "${taskTitle}" edit succesful!`);
   } else {
-    console.log(`⛔ Task "${taskTitle}" couldn't edit!`);
+    console.error(`⛔ Task "${taskTitle}" couldn't edit!`);
   }
 }
 
