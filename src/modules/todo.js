@@ -100,6 +100,16 @@ function editTask(projectName, taskTitle, newTitle, newDescription, newDuedate, 
   }
 }
 
+(function defaultProject(){
+  const isEmpty = Object.keys(projects).length === 0;
+  if (isEmpty) {
+    console.log(`🟡 Projects is empty, creating a default one!`);
+    makeNewProject('default');
+  } else {
+    return null; 
+  }
+})();
+
 module.exports = {
   makeNewTask,
   makeNewProject,
