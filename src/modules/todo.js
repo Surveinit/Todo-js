@@ -16,6 +16,13 @@ class Task {
   togglePriority() {
     this.priority = !this.priority;
   }
+
+  updateTask(newTitle, newDescription, newDuedate, newPriority) {
+    this.title = newTitle || this.title;
+    this.description = newDescription || this.description;
+    this.dueDate = newDuedate || this.dueDate;
+    this.priority = newPriority || this.priority;
+  }
 }
 
 function makeNewProject(projectName) {
@@ -83,6 +90,16 @@ function deleteTodo(projectName, taskTitle) {
   } 
 }
 
+function editTask(projectName, taskTitle, newTitle, newDescription, newDuedate, newPriority) {
+  taskObj = findTask(projectName, taskTitle);  
+  if (taskObj) {
+    taskObj.updateTask(newTitle, newDescription, newDuedate, newPriority);
+    console.log(`✅ Task "${taskTitle}" edit succesful!`);
+  } else {
+    console.log(`⛔ Task "${taskTitle}" couldn't edit!`);
+  }
+}
+
 module.exports = {
   makeNewTask,
   makeNewProject,
@@ -90,5 +107,6 @@ module.exports = {
   markTaskAsComplete,
   toggleTaskPriority,
   deleteTodo,
+  editTask,
   projects,
 };

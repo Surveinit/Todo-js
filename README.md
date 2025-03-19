@@ -3,5 +3,5 @@
 - [X] New todos
 - [X] Setting todos as complete
 - [X] Changing priority
-- [ ] Edit details
+- [X] Edit details
 - [X] Delete todo
