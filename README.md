@@ -4,4 +4,4 @@
 - [X] Setting todos as complete
 - [X] Changing priority
 - [ ] Edit details
-- [ ] Delete todo
+- [X] Delete todo

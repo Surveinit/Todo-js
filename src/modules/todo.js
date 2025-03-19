@@ -67,11 +67,28 @@ function toggleTaskPriority(projectName, taskTitle) {
   }
 }
 
+function deleteTodo(projectName, taskTitle) {
+   if (!projects[projectName]) {
+    console.log(`⛔ Project "${projectName}" not found.`);
+    return;
+  }
+
+  const taskIndex = projects[projectName].findIndex((task) => task.title === taskTitle);
+  
+  if (taskIndex !== -1) {
+    projects[projectName].splice(taskIndex, 1); // Remove the task from the array
+    console.log(`✅ Task "${taskTitle}" deleted!`);
+  } else {
+    console.log(`⛔ Task "${taskTitle}" not found in project "${projectName}".`);
+  } 
+}
+
 module.exports = {
   makeNewTask,
   makeNewProject,
   addTaskToProject,
   markTaskAsComplete,
   toggleTaskPriority,
+  deleteTodo,
   projects,
 };
