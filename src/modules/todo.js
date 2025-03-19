@@ -5,12 +5,16 @@ class Task {
     this.title = title;
     this.description = description;
     this.dueDate = dueDate;
-    this.priority = priority;
+    this.priority = false;
     this.completion = false;
   }
 
   markAsComplete() {
     this.completion = true;
+  }
+
+  togglePriority() {
+    this.priority = !this.priority;
   }
 }
 
@@ -49,7 +53,17 @@ function markTaskAsComplete(projectName, taskTitle) {
     taskObj.markAsComplete();
     console.log(`✅ Task "${taskTitle}" marked as complete!`);
   } else {
-    console.log(`Task "${taskTitle}" not found!`);
+    console.log(`⛔ Task "${taskTitle}" not found!`);
+  }
+}
+
+function toggleTaskPriority(projectName, taskTitle) {
+  taskObj = findTask(projectName, taskTitle); 
+  if (taskObj) {
+    taskObj.togglePriority();
+    console.log(`✅ Task "${taskTitle}" priority changed!`);
+  } else {
+    console.log(`⛔ Task "${taskTitle}" couldn't change priority!`);
   }
 }
 
@@ -58,5 +72,6 @@ module.exports = {
   makeNewProject,
   addTaskToProject,
   markTaskAsComplete,
+  toggleTaskPriority,
   projects,
 };
