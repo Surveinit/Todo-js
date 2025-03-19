@@ -48,7 +48,7 @@ function addTaskToProject(projectName, task) {
 function findTask(projectName, taskTitle) {
   if (!projects[projectName]) {
     console.log(`Project ${projectName} not found.`);
-    return;
+    return null;
   }
   const taskObj = projects[projectName].find((task) => task.title === taskTitle);
   return taskObj;
