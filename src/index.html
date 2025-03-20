@@ -1,12 +1,23 @@
-<!-- No need to manually to connect javascript! Webpack does it for us. -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
+    <div class="container">
+        <h1>Todo App</h1>
+
+        <div class="project-section">
+            <input type="text" id="project-name" placeholder="Project Name">
+            <button id="add-project-btn">Add Project</button>
+        </div>
+
+        <div id="projects-container"></div>
+
+    </div>
+
 </body>
 </html>

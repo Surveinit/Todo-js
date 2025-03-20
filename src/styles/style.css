@@ -1,0 +1,175 @@
+body {
+  font-family: "Georgia", serif;
+  background-color: #301b0b;
+  background-image: url("https://i.pinimg.com/736x/e1/fc/b4/e1fcb4a0babefc8919351da1fe6e43c5.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 40px 20px;
+}
+
+h3 {
+  color: #f4e6c2;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: #5c3a21;
+  padding: 25px;
+  border-radius: 0px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  position: relative;
+  border: 1px solid #3a240f;
+  /* Leather stitch border */
+  background-image:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent 49%,
+      #3a240f 49%,
+      #3a240f 51%,
+      transparent 51%,
+      transparent 100%
+    ),
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 49%,
+      #3a240f 49%,
+      #3a240f 51%,
+      transparent 51%,
+      transparent 100%
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent 49%,
+      #3a240f 49%,
+      #3a240f 51%,
+      transparent 51%,
+      transparent 100%
+    ),
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 49%,
+      #3a240f 49%,
+      #3a240f 51%,
+      transparent 51%,
+      transparent 100%
+    );
+  background-size:
+    100% 2px,
+    2px 100%,
+    100% 2px,
+    2px 100%;
+  background-position: top, right, bottom, left;
+  background-repeat: repeat-x, repeat-y, repeat-x, repeat-y;
+}
+
+/* Stitching effect around container */
+.container:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 1px dashed #e0c396;
+  pointer-events: none;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  color: #f4e6c2;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  margin-bottom: 25px;
+  border-bottom: 2px solid #8b5a2b;
+  padding-bottom: 10px;
+}
+
+.project-section {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #8b5a2b;
+  background-color: #f7efd2;
+  color: #5c3a21;
+  font-family: "Georgia", serif;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+}
+
+button {
+  padding: 8px 15px;
+  background-color: #8b5a2b;
+  color: #f4e6c2;
+  border: 1px solid #5c3a21;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Georgia", serif;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: #a06c33;
+}
+
+button:active {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  transform: translateY(1px);
+}
+
+.project {
+  margin-top: 25px;
+  padding: 15px;
+  background: #6b4423;
+  border: 1px solid #3a240f;
+  position: relative;
+}
+
+/* Leather texture for project headers */
+.project:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEUAAABKPDJKPDJKPDJKPDJKPDJKPDJKPDJKPDJKPDJKPDJKPDJKPDJKPDJKPDJKPDJKPDJKPDJKPDJKPDJKPDJKPDJKPDJKPDJKPDJKPDJKPDJKPDJ22DY8AAAAGnRSTlMAA/flPzXsuJBnVkQnGhQK5r6yjH5zWzYTD5vJbTgAAAB2SURBVEjH7dS5DcAwDERRyhvlfd77X0sFgQF3qVLMawD5fADCBmuTPZpWgHO5+JJMGbjVQgojJOeEmrNQchUwuTFxKgGTL5MVE/8SMPkxWSGy8h+AlyfzlD/PUgAmJyYOJWByYLJg4lbiNn+Y6JAHmh5g2uw+2htYoT7Wvn7fwwAAAABJRU5ErkJggg==");
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.task {
+  margin-top: 12px;
+  padding: 10px;
+  background: #f7efd2;
+  border: 1px solid #8b5a2b;
+  color: #3a240f;
+  font-family: "Georgia", serif;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Yellowed paper effect for tasks */
+.task:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEUAAAD/9uL/9uL/9uL/9uL/9uL/9uL/9uL/9uL/9uL/9uL/9uL/9uL/9uL/9uL/9uL/9uL/9uL/9uL/9uL/9uL/9uL/9uL/9uL/9uL/9uL/9uL/9uIEvtiUAAAAGnRSTlMAA/fhPzDsuJBnVkQnGhQK5r6yjH5zWzYTDzTQN/0AAAB2SURBVEjH7dS5DcAwDERRyhvlfd7730sFgQF3qVLMawD5fADCBmuTPZpWgHO5+JJMGbjVQgojJOeEmrNQchUwuTFxKgGTL5MVE/8SMPkxWSGy8h+AlyfzlD/PUgAmJyYOJWByYLJg4lbiNn+Y6JAHmh5g2uw+2htdFz7WhoYAAAAASUVORK5CYII=");
+  opacity: 0.1;
+  pointer-events: none;
+}
