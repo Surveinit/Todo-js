@@ -1,4 +1,4 @@
-const projects = {};
+export const projects = {};
 
 class Task {
   constructor(title, description, dueDate, priority) {
@@ -25,7 +25,7 @@ class Task {
   }
 }
 
-function makeNewProject(projectName) {
+export function makeNewProject(projectName) {
   if (!projects[projectName]) {
     projects[projectName] = [];
   } else {
@@ -33,19 +33,19 @@ function makeNewProject(projectName) {
   }
 }
 
-function makeNewTask(projectName, title, description, dueDate, priority) {
+export function makeNewTask(projectName, title, description, dueDate, priority) {
   const task = new Task(title, description, dueDate, priority);
   addTaskToProject(projectName, task);
 }
 
-function addTaskToProject(projectName, task) {
+export function addTaskToProject(projectName, task) {
   if (!projects[projectName]) {
     projects[projectName] = [];
   }
   projects[projectName].push(task);
 }
 
-function findTask(projectName, taskTitle) {
+export function findTask(projectName, taskTitle) {
   if (!projects[projectName]) {
     console.log(`Project ${projectName} not found.`);
     return null;
@@ -54,7 +54,7 @@ function findTask(projectName, taskTitle) {
   return taskObj;
 }
 
-function markTaskAsComplete(projectName, taskTitle) {
+export function markTaskAsComplete(projectName, taskTitle) {
   const taskObj = findTask(projectName, taskTitle);
   if (taskObj) {
     taskObj.markAsComplete();
@@ -64,7 +64,7 @@ function markTaskAsComplete(projectName, taskTitle) {
   }
 }
 
-function toggleTaskPriority(projectName, taskTitle) {
+export function toggleTaskPriority(projectName, taskTitle) {
   const taskObj = findTask(projectName, taskTitle); 
   if (taskObj) {
     taskObj.togglePriority();
@@ -74,7 +74,7 @@ function toggleTaskPriority(projectName, taskTitle) {
   }
 }
 
-function deleteTodo(projectName, taskTitle) {
+export function deleteTodo(projectName, taskTitle) {
    if (!projects[projectName]) {
     console.error(`⛔ Project "${projectName}" not found.`);
     return;
@@ -90,7 +90,7 @@ function deleteTodo(projectName, taskTitle) {
   } 
 }
 
-function editTask(projectName, taskTitle, newTitle, newDescription, newDuedate, newPriority) {
+export function editTask(projectName, taskTitle, newTitle, newDescription, newDuedate, newPriority) {
   const taskObj = findTask(projectName, taskTitle);  
   if (taskObj) {
     taskObj.updateTask(newTitle, newDescription, newDuedate, newPriority);
@@ -110,13 +110,13 @@ function editTask(projectName, taskTitle, newTitle, newDescription, newDuedate, 
   }
 })();
 
-module.exports = {
-  makeNewTask,
-  makeNewProject,
-  addTaskToProject,
-  markTaskAsComplete,
-  toggleTaskPriority,
-  deleteTodo,
-  editTask,
-  projects,
-};
+// module.exports = {
+//   makeNewTask,
+//   makeNewProject,
+//   addTaskToProject,
+//   markTaskAsComplete,
+//   toggleTaskPriority,
+//   deleteTodo,
+//   editTask,
+//   projects,
+// };
