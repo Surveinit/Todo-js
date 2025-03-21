@@ -1,4 +1,4 @@
-import { Task } from "./tasks.js";
+import { saveProjectsToLocalStorage } from "./projectManager.js";
 
 export class Project {
   constructor(name) {
@@ -7,18 +7,21 @@ export class Project {
   }
 
   addTask(task) {
-    if (this.tasks.some(t => t.title === task.title)) {
+    if (this.tasks.some((t) => t.title === task.title)) {
       console.log(`⛔ Task "${task.title}" already exists in "${this.name}"!`);
       return;
     }
     this.tasks.push(task);
+    saveProjectsToLocalStorage();
   }
 
   removeTask(taskTitle) {
-    this.tasks = this.tasks.filter(task => task.title !== taskTitle);
+    if (!this.tasks) return;
+    this.tasks = this.tasks.filter((task) => task.title !== taskTitle);
+    saveProjectsToLocalStorage();
   }
 
   getTask(taskTitle) {
-    return this.tasks.find(task => task.title === taskTitle);
+    return this.tasks.find((task) => task.title === taskTitle);
   }
 }

@@ -1,3 +1,5 @@
+import { saveProjectsToLocalStorage } from "./projectManager.js";
+
 export class Task {
   constructor(title, description, dueDate, priority = false) {
     this.title = title;
@@ -9,10 +11,12 @@ export class Task {
 
   markAsComplete() {
     this.completion = true;
+    saveProjectsToLocalStorage();
   }
 
   togglePriority() {
     this.priority = !this.priority;
+    saveProjectsToLocalStorage();
   }
 
   updateTask(newTitle, newDescription, newDueDate, newPriority) {
@@ -20,5 +24,6 @@ export class Task {
     this.description = newDescription ?? this.description;
     this.dueDate = newDueDate ?? this.dueDate;
     this.priority = newPriority ?? this.priority;
+    saveProjectsToLocalStorage();
   }
 }
