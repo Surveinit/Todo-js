@@ -6,6 +6,17 @@ const projectInput = document.getElementById("project-name");
 const addProjectBtn = document.getElementById("add-project-btn");
 const projectsContainer = document.getElementById("projects-container");
 
+(function defaultProject(){
+  const projects = getProjects();
+  const isEmpty = Object.keys(projects).length === 0;
+  if (isEmpty) {
+    console.log('🟡 Projects is empty, creating a default one!');
+    makeNewProject('default');
+  } else {
+    return null; 
+  }
+})();
+
 // 🟢 Add Project
 addProjectBtn.addEventListener("click", () => {
     const projectName = projectInput.value.trim();
